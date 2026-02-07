@@ -1,0 +1,46 @@
+import pandas as pd
+import numpy as np
+
+np.random.seed(1)
+N = 300
+
+data = pd.DataFrame({
+    "avg_temp": np.random.uniform(-35, -10, N),
+    "min_temp": np.random.uniform(-45, -20, N),
+    "snow_depth": np.random.uniform(0, 80, N),
+    "wind_speed": np.random.uniform(1, 20, N),
+    "livestock_total": np.random.randint(50, 2500, N),
+})
+
+# pasture_index (0–1) нормчилсон индекс
+data["pasture_index"] = (
+    (80 - data["snow_depth"]) * 0.4 +
+    (data["avg_temp"] + 40) * 0.4 -
+    data["wind_speed"] * 0.2
+) / 100
+data["pasture_index"] = data["pasture_index"].clip(0, 1)
+
+# dzud_risk label (0–3)
+def dzud_label(row):
+    if row.min_temp < -40 and row.snow_depth > 50:
+        return 3
+    elif row.min_temp < -30 and row.snow_depth > 30:
+        return 2
+    elif row.min_temp < -25 or row.snow_depth > 20:
+        return 1
+    else:
+        return 0
+
+data["dzud_risk"] = data.apply(dzud_label, axis=1)
+
+# CSV файл болгон хадгалах
+out = "dzud_ai_dataset.csv"
+data.to_csv(out, index=False)
+
+print(f"✅ Saved: {out}")
+print("📍 Folder:", __import__("os").getcwd())
+print(data.head())
+
+print(f"✅ Saved: {out}")
+print("📍 Folder:", __import__("os").getcwd())
+print(data.head())

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Data files
+*.csv
+*.pkl
+*.geojson
+*.log
+
+# OS files
+.DS_Store
+.vscode/
+
+# Backup files
+*.save
+
+# Metadata
+*_meta.json
