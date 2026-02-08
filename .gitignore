@@ -9,19 +9,9 @@ venv/
 ENV/
 env/
 
-# Data files
-*.csv
-*.pkl
-*.geojson
-*.log
-*.zip
-
 # OS files
 .DS_Store
 .vscode/
 
 # Backup files
 *.save
-
-# Metadata
-*_meta.json
