@@ -1,0 +1,98 @@
+{
+  "model_type": "Gradient Boosting",
+  "features": [
+    "avg_temp",
+    "min_temp",
+    "wind_speed",
+    "snowfall_sum",
+    "precip_sum",
+    "avg_temp_lag1",
+    "min_temp_lag1",
+    "wind_speed_lag1",
+    "snowfall_sum_lag1",
+    "precip_sum_lag1",
+    "avg_temp_lag2",
+    "min_temp_lag2",
+    "wind_speed_lag2",
+    "snowfall_sum_lag2",
+    "precip_sum_lag2",
+    "is_winter",
+    "cold_index",
+    "snow_cumulative",
+    "precip_deficit",
+    "extreme_cold",
+    "extreme_wind",
+    "heavy_snow",
+    "total_livestock",
+    "livestock_change_pct"
+  ],
+  "num_features": 24,
+  "accuracy": 0.9803921568627451,
+  "target_classes": [
+    "No Dzud",
+    "Dzud"
+  ],
+  "note": "Advanced model using real livestock loss data and engineered features",
+  "feature_importance": [
+    {
+      "feature": "livestock_change_pct",
+      "importance": 0.4033123542633639
+    },
+    {
+      "feature": "total_livestock",
+      "importance": 0.23600206452974945
+    },
+    {
+      "feature": "avg_temp_lag2",
+      "importance": 0.20652063776319116
+    },
+    {
+      "feature": "snow_cumulative",
+      "importance": 0.06259812782742587
+    },
+    {
+      "feature": "avg_temp",
+      "importance": 0.019900569917923036
+    },
+    {
+      "feature": "min_temp_lag2",
+      "importance": 0.014091717505577918
+    },
+    {
+      "feature": "wind_speed",
+      "importance": 0.013349358974358988
+    },
+    {
+      "feature": "cold_index",
+      "importance": 0.011513941782285098
+    },
+    {
+      "feature": "precip_deficit",
+      "importance": 0.006701576859644513
+    },
+    {
+      "feature": "extreme_cold",
+      "importance": 0.006344891067338483
+    },
+    {
+      "feature": "precip_sum",
+      "importance": 0.00567846415520314
+    },
+    {
+      "feature": "wind_speed_lag1",
+      "importance": 0.005534335982012469
+    },
+    {
+      "feature": "min_temp",
+      "importance": 0.0046282047529741955
+    },
+    {
+      "feature": "min_temp_lag1",
+      "importance": 0.0016426233206999815
+    },
+    {
+      "feature": "avg_temp_lag1",
+      "importance": 0.0011017809794185529
+    }
+  ]
+}
