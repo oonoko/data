@@ -1,0 +1,46 @@
+{
+  "model_type": "RandomForestClassifier",
+  "features": [
+    "avg_temp",
+    "min_temp",
+    "wind_speed",
+    "snowfall_sum",
+    "precip_sum",
+    "livestock_count"
+  ],
+  "label_map": {
+    "0": "Бага",
+    "1": "Дунд",
+    "2": "Өндөр",
+    "3": "Маш өндөр"
+  },
+  "accuracy": 0.9416666666666667,
+  "cv_score": 0.9375,
+  "feature_importance": [
+    {
+      "feature": "min_temp",
+      "importance": 0.26658363412835
+    },
+    {
+      "feature": "wind_speed",
+      "importance": 0.23565221834661582
+    },
+    {
+      "feature": "precip_sum",
+      "importance": 0.18716731941938042
+    },
+    {
+      "feature": "avg_temp",
+      "importance": 0.1832704006694697
+    },
+    {
+      "feature": "snowfall_sum",
+      "importance": 0.08561783729765075
+    },
+    {
+      "feature": "livestock_count",
+      "importance": 0.041708590138533425
+    }
+  ],
+  "note": "Experimental model - livestock data is synthetic/proxy"
+}
