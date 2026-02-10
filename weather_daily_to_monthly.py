@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+Convert daily weather data to monthly aggregates
+"""
+
 import pandas as pd
 
 df = pd.read_csv("weather_omnogovi_daily.csv")

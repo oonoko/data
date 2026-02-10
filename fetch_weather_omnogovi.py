@@ -1,9 +1,12 @@
+#!/usr/bin/env python3
+"""
+Fetch weather data from Meteostat for Omnogovi soums
+"""
+
 from datetime import datetime
 import pandas as pd
 import time
-
-from meteostat import Point
-from meteostat import Daily  # ← энэ мөрийг яг ингэж
+from meteostat import Point, Daily
 
 soums = pd.read_csv("soum_list.csv")
 
