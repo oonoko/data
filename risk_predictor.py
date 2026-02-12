@@ -79,7 +79,13 @@ class DzudRiskPredictor:
         }
     
     def calculate_weather_risk(self, weather: Dict) -> Tuple[float, List[str]]:
-        """Calculate weather-based risk score (0-100)"""
+        """Calculate weather-based risk score (0-100)
+        Зуд зөвхөн өвлийн сарууд (11, 12, 1, 2, 3) дээр тооцоологдоно
+        """
+        # Зун (4-10 сар) - зуд байхгүй
+        if weather['month'] not in [11, 12, 1, 2, 3]:
+            return 0, ["Зун - зудын эрсдэл байхгүй"]
+        
         score = 0
         reasons = []
         

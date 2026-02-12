@@ -70,7 +70,12 @@ print("Calculating risk scores...")
 def calculate_risk_score(row):
     """
     Risk score based on weather + livestock exposure
+    Зуд зөвхөн өвлийн сарууд (11, 12, 1, 2, 3) дээр тооцоологдоно
     """
+    # Зун (4-10 сар) - зуд байхгүй
+    if row['month'] not in [11, 12, 1, 2, 3]:
+        return 0
+    
     score = 0
     
     # Temperature risk (min_temp буурах тусам risk↑)
